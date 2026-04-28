@@ -117,21 +117,60 @@ nav {
 
 .content-sections {
     min-height: 400px;
+    padding: 40px 20px;
+}
+
+.accordion-stack {
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .content-card {
-    animation: slideDown 0.5s ease-out;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: all 0.4s ease;
 }
 
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.content-card.collapsed {
+    max-height: 80px;
+}
+
+.content-card.expanded {
+    max-height: 2000px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.card-header {
+    padding: 20px 30px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.card-header:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+.card-content {
+    padding: 0 30px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.content-card.expanded .card-content {
+    max-height: 2000px;
+    padding: 30px;
 }
 
 h2 {

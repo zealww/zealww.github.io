@@ -45,92 +45,114 @@
         <!-- 可折叠内容区域 -->
         <section id="content-sections" class="content-sections">
             <div class="container">
-                <!-- 我的项目 -->
-                <div class="content-card" id="projects" style="display: none;">
-                    <h2>我的项目</h2>
-                    <div class="project-grid">
-                        <div class="project-card">
-                            <h3>项目 1</h3>
-                            <p>项目描述</p>
-                            <a href="#" class="project-link">查看详情</a>
+                <div class="accordion-stack">
+                    <!-- 我的项目 -->
+                    <div class="content-card collapsed" id="projects">
+                        <div class="card-header">
+                            <h2>我的项目</h2>
                         </div>
-                        <div class="project-card">
-                            <h3>项目 2</h3>
-                            <p>项目描述</p>
-                            <a href="#" class="project-link">查看详情</a>
-                        </div>
-                        <div class="project-card">
-                            <h3>项目 3</h3>
-                            <p>项目描述</p>
-                            <a href="#" class="project-link">查看详情</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 我的学术 -->
-                <div class="content-card" id="academic" style="display: none;">
-                    <h2>我的学术</h2>
-                    <div class="project-grid">
-                        <div class="project-card">
-                            <h3>论文 1</h3>
-                            <p>论文描述和发表信息</p>
-                            <a href="#" class="project-link">查看详情</a>
-                        </div>
-                        <div class="project-card">
-                            <h3>论文 2</h3>
-                            <p>论文描述和发表信息</p>
-                            <a href="#" class="project-link">查看详情</a>
+                        <div class="card-content">
+                            <div class="project-grid">
+                                <div class="project-card">
+                                    <h3>项目 1</h3>
+                                    <p>项目描述</p>
+                                    <a href="#" class="project-link">查看详情</a>
+                                </div>
+                                <div class="project-card">
+                                    <h3>项目 2</h3>
+                                    <p>项目描述</p>
+                                    <a href="#" class="project-link">查看详情</a>
+                                </div>
+                                <div class="project-card">
+                                    <h3>项目 3</h3>
+                                    <p>项目描述</p>
+                                    <a href="#" class="project-link">查看详情</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- 我的比赛 -->
-                <div class="content-card" id="competitions" style="display: none;">
-                    <h2>我的比赛</h2>
-                    <div class="project-grid">
-                        <div class="project-card">
-                            <h3>比赛 1</h3>
-                            <p>比赛名称和参赛经历</p>
-                            <a href="#" class="project-link">查看详情</a>
+                    <!-- 我的学术 -->
+                    <div class="content-card collapsed" id="academic">
+                        <div class="card-header">
+                            <h2>我的学术</h2>
                         </div>
-                        <div class="project-card">
-                            <h3>比赛 2</h3>
-                            <p>比赛名称和参赛经历</p>
-                            <a href="#" class="project-link">查看详情</a>
+                        <div class="card-content">
+                            <div class="project-grid">
+                                <div class="project-card">
+                                    <h3>论文 1</h3>
+                                    <p>论文描述和发表信息</p>
+                                    <a href="#" class="project-link">查看详情</a>
+                                </div>
+                                <div class="project-card">
+                                    <h3>论文 2</h3>
+                                    <p>论文描述和发表信息</p>
+                                    <a href="#" class="project-link">查看详情</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- 我的获奖 -->
-                <div class="content-card" id="awards" style="display: none;">
-                    <h2>我的获奖</h2>
-                    <div class="project-grid">
-                        <div class="project-card">
-                            <h3>奖项 1</h3>
-                            <p>获奖名称和时间</p>
-                            <a href="#" class="project-link">查看详情</a>
+                    <!-- 我的比赛 -->
+                    <div class="content-card collapsed" id="competitions">
+                        <div class="card-header">
+                            <h2>我的比赛</h2>
                         </div>
-                        <div class="project-card">
-                            <h3>奖项 2</h3>
-                            <p>获奖名称和时间</p>
-                            <a href="#" class="project-link">查看详情</a>
+                        <div class="card-content">
+                            <div class="project-grid">
+                                <div class="project-card">
+                                    <h3>比赛 1</h3>
+                                    <p>比赛名称和参赛经历</p>
+                                    <a href="#" class="project-link">查看详情</a>
+                                </div>
+                                <div class="project-card">
+                                    <h3>比赛 2</h3>
+                                    <p>比赛名称和参赛经历</p>
+                                    <a href="#" class="project-link">查看详情</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- 我的教育经历 -->
-                <div class="content-card" id="education" style="display: none;">
-                    <h2>我的教育经历</h2>
-                    <div class="project-grid">
-                        <div class="project-card">
-                            <h3>学校 1</h3>
-                            <p>专业、学位、时间</p>
-                            <a href="#" class="project-link">查看详情</a>
+                    <!-- 我的获奖 -->
+                    <div class="content-card collapsed" id="awards">
+                        <div class="card-header">
+                            <h2>我的获奖</h2>
                         </div>
-                        <div class="project-card">
-                            <h3>学校 2</h3>
-                            <p>专业、学位、时间</p>
-                            <a href="#" class="project-link">查看详情</a>
+                        <div class="card-content">
+                            <div class="project-grid">
+                                <div class="project-card">
+                                    <h3>奖项 1</h3>
+                                    <p>获奖名称和时间</p>
+                                    <a href="#" class="project-link">查看详情</a>
+                                </div>
+                                <div class="project-card">
+                                    <h3>奖项 2</h3>
+                                    <p>获奖名称和时间</p>
+                                    <a href="#" class="project-link">查看详情</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 我的教育经历 -->
+                    <div class="content-card collapsed" id="education">
+                        <div class="card-header">
+                            <h2>我的教育经历</h2>
+                        </div>
+                        <div class="card-content">
+                            <div class="project-grid">
+                                <div class="project-card">
+                                    <h3>学校 1</h3>
+                                    <p>专业、学位、时间</p>
+                                    <a href="#" class="project-link">查看详情</a>
+                                </div>
+                                <div class="project-card">
+                                    <h3>学校 2</h3>
+                                    <p>专业、学位、时间</p>
+                                    <a href="#" class="project-link">查看详情</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

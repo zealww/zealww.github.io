@@ -10,29 +10,63 @@ buttons.forEach(button => {
         // 如果点击的是当前激活的按钮，则折叠
         if (this.classList.contains('active')) {
             this.classList.remove('active');
-            targetCard.style.display = 'none';
+            targetCard.classList.remove('expanded');
+            targetCard.classList.add('collapsed');
             return;
         }
 
         // 移除所有按钮的激活状态
         buttons.forEach(btn => btn.classList.remove('active'));
 
-        // 隐藏所有内容卡片
+        // 折叠所有内容卡片
         contentCards.forEach(card => {
-            card.style.display = 'none';
+            card.classList.remove('expanded');
+            card.classList.add('collapsed');
         });
 
-        // 激活当前按钮并显示对应内容
+        // 激活当前按钮并展开对应内容
         this.classList.add('active');
-        targetCard.style.display = 'block';
+        targetCard.classList.remove('collapsed');
+        targetCard.classList.add('expanded');
 
         // 平滑滚动到内容区域
         setTimeout(() => {
             targetCard.scrollIntoView({
                 behavior: 'smooth',
-                block: 'start'
+                block: 'center'
             });
         }, 100);
+    });
+});
+
+// 卡片标题点击也可以展开/折叠
+document.querySelectorAll('.card-header').forEach(header => {
+    header.addEventListener('click', function() {
+        const card = this.parentElement;
+        const cardId = card.id;
+        const correspondingButton = document.querySelector(`button[data-section="${cardId}"]`);
+
+        if (card.classList.contains('expanded')) {
+            card.classList.remove('expanded');
+            card.classList.add('collapsed');
+            if (correspondingButton) {
+                correspondingButton.classList.remove('active');
+            }
+        } else {
+            // 折叠所有其他卡片
+            contentCards.forEach(c => {
+                c.classList.remove('expanded');
+                c.classList.add('collapsed');
+            });
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // 展开当前卡片
+            card.classList.remove('collapsed');
+            card.classList.add('expanded');
+            if (correspondingButton) {
+                correspondingButton.classList.add('active');
+            }
+        }
     });
 });
 
