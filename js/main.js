@@ -1,3 +1,41 @@
+// 按钮切换内容区域
+const buttons = document.querySelectorAll('.btn[data-section]');
+const contentCards = document.querySelectorAll('.content-card');
+
+buttons.forEach(button => {
+    button.addEventListener('click', function() {
+        const targetSection = this.getAttribute('data-section');
+        const targetCard = document.getElementById(targetSection);
+
+        // 如果点击的是当前激活的按钮，则折叠
+        if (this.classList.contains('active')) {
+            this.classList.remove('active');
+            targetCard.style.display = 'none';
+            return;
+        }
+
+        // 移除所有按钮的激活状态
+        buttons.forEach(btn => btn.classList.remove('active'));
+
+        // 隐藏所有内容卡片
+        contentCards.forEach(card => {
+            card.style.display = 'none';
+        });
+
+        // 激活当前按钮并显示对应内容
+        this.classList.add('active');
+        targetCard.style.display = 'block';
+
+        // 平滑滚动到内容区域
+        setTimeout(() => {
+            targetCard.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }, 100);
+    });
+});
+
 // 平滑滚动
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
